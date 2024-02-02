@@ -1,0 +1,61 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Expense</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page">Home</a>
+        </li>
+        <div *ngIf="isAuthenticated==true">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" routerLink="/expenselist"  routerLinkActive="active">your Expenses</a>
+              </li>
+              </div>
+              <div *ngIf="isAuthenticated==true">   
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" routerLink="/addexpense"  routerLinkActive="active">Add Expense</a>
+              </li>
+            
+          </div>
+          <div class="d-grid gap-4" *ngIf='is_superuser=="true"'>
+            <li class="nav-item">
+            <a class="nav-link text-success" aria-current="page" routerLink="/allexpense" routerLinkActive="active">All Expense</a>
+          </li>
+          </div>
+            </ul>
+            <div class="d-grid gap-4" *ngIf="isAuthenticated==false">
+            <ul class="navbar-nav">
+              
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" routerLink="/login" >Login</a>
+              </li>
+        </ul>
+      
+        <ul>
+      <li class="nav-item">
+        <a class="nav-link" aria-current="page" routerLink="/register" >Register</a>
+      </li>
+    </ul>
+  </div>
+  <div class="d-grid gap-4" *ngIf="isAuthenticated==true">
+        <ul>
+         
+      <li class="nav-item">
+        <button class="nav-link" aria-current="page" value="LOGOUT" (click)="logout()">Logout {{username}}</button>
+      </li>
+    </ul>
+  </div>
+  
+ 
+      <!-- <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form> -->
+    </div>
+  </div>
+</nav>
+
+<router-outlet></router-outlet>
