@@ -1,0 +1,38 @@
+
+
+<h1 class="text-center">{{title}}</h1>
+<div class="m-3">
+<form (ngSubmit)="onSubmit()" #registerForm="ngForm">
+    <label class="text-danger text-center">{{e}}{{u}}</label>
+    <div class="mb-3">
+      <label for="username" class="form-label">expense name</label>
+      <input type="text" class="form-control" id="name" name="name" [(ngModel)]="model.name" required>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">description</label>
+      <input type="text" class="form-control" id="description" name="description" [(ngModel)]="model.description" required>
+    </div>
+    <div class="mb-3">
+      <label for="" class="form-label">Category</label>
+      <select class="form-control" id="category" name="category" [(ngModel)]="model.category" required>
+        
+            <option value='Health'>Health</option>
+            <option value="Electronics">Electronics</option>
+            <option value="Travel">Travel</option>
+            <option value="Education">Education</option>
+            <option value="Books">Books</option>
+            <option value="Other">Other</option>
+        </select>
+    </div>
+    <div class="mb-3">
+        <label for="amount_spent" class="form-label">amount_spent</label>
+        <input type="number" class="form-control" id="amount_spent" name="amount_spent" [(ngModel)]="model.amount_spent" required>
+      </div>
+      <div class="mb-3">
+        <label for="date" class="form-label">Date</label>
+        <input type="date" class="form-control" id="date_created" name="date_created" [(ngModel)]="model.date_created" required>
+      </div>
+    <button type="submit" class="btn btn-primary" [disabled]="!registerForm.valid">Register</button>
+  </form>
+
+</div>

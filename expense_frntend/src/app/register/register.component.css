@@ -1,0 +1,35 @@
+form {
+    background-color:rgb(149, 217, 242);
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    margin: 0 auto;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  input[type="text"],
+  input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  input[type="submit"] {
+    background-color: rgb(4, 114, 76);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  input[type="submit"]:hover {
+    background-color: rgba(14, 124, 87, 0.866);
+  }
